@@ -27,6 +27,7 @@ app = FastAPI()
 sample_list = []
 
 
+# Retrieve all samples stored in sample_list
 @app.get("/sample")
 async def get_all_sample():
     return JSONResponse(
@@ -35,6 +36,7 @@ async def get_all_sample():
     )
 
 
+# Add new sample to sample_list
 @app.post("/sample")
 async def add_sample(request_sample: RequestSample):
     new_sample = Sample(
@@ -49,6 +51,7 @@ async def add_sample(request_sample: RequestSample):
     )
 
 
+# Retrieve sample having id = {path variable}
 @app.get("/sample/{id}")
 async def get_sample(id: int):
     sample = None
@@ -63,6 +66,7 @@ async def get_sample(id: int):
     raise HTTPException(status_code=404, detail="Sample not found")
 
 
+# Delete sample having id = {path variable}
 @app.delete("/sample/{id}")
 async def delete_sample(id: int):
     for s in sample_list:
@@ -73,6 +77,7 @@ async def delete_sample(id: int):
     raise HTTPException(status_code=404, detail="Sample not found")
 
 
+# Update the sample having id = {path variable} using field provided in request parameter (q)
 @app.put("/sample/{id}")
 async def update_sample(id: int, q: str = None):
     old_sample = [copy.deepcopy(s) for s in sample_list if s.id == id]
