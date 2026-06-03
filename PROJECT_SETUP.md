@@ -14,6 +14,8 @@ python --version
 pip --version
 ```
 
+> In case you intend to use one of the sample project from this repo, follow steps marked with $$
+
 ---
 
 # Creating a Project
@@ -25,9 +27,14 @@ mkdir fastapi-project
 cd fastapi-project
 ```
 
+(**$$**) clone any of fastapi project repo
+```bash
+git clone <REPO_URL>
+```
+
 ---
 
-# Creating a Virtual Environment
+# Creating a Virtual Environment ($$)
 
 A virtual environment isolates project dependencies from other Python projects (like node_modules in Node).
 
@@ -63,7 +70,7 @@ Install FastAPI and Uvicorn:
 pip install fastapi uvicorn
 ```
 
-Or install all project dependencies (create 'requirements.txt' file and write all the dependencies needed along with their version):
+(**$$**) or install all project dependencies (create 'requirements.txt' file and write all the dependencies needed along with their version):
 
 ```bash
 pip install -r requirements.txt
@@ -85,7 +92,7 @@ or, install
 pip install "fastapi[standard]"
 ```
 
-and use following command to easy run application
+(**$$**) and use following command to easy run application
 
 ```bash
 fastapi dev
@@ -109,7 +116,7 @@ http://127.0.0.1:8000
 
 ---
 
-# Interactive API Documentation
+# Interactive API Documentation ($$)
 
 FastAPI automatically generates API documentation.
 
@@ -144,7 +151,7 @@ project/
 
 ---
 
-# Deactivating Virtual Environment
+# Deactivating Virtual Environment ($$)
 
 When finished:
 
