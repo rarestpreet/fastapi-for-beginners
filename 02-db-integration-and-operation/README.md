@@ -373,20 +373,6 @@ Removes the record from the database.
 
 ## Response Handling
 
-### Automatic JSON Serialization
-
-FastAPI automatically converts Python objects into JSON.
-
-Example:
-
-```python
-return sample
-```
-
-No explicit JSON conversion is required.
-
----
-
 ### Response Models
 
 Example:
@@ -439,27 +425,6 @@ Then:
 This ensures the response matches the declared schema.
 
 ---
-
-## Error Handling
-
-The project uses FastAPI's HTTPException.
-
-Example:
-
-```python
-raise HTTPException(
-    status_code=404,
-    detail="sample not found"
-)
-```
-
-Response:
-
-```json
-{
-    "detail": "sample not found"
-}
-```
 
 ---
 
